@@ -89,11 +89,55 @@ describe('multiply', () => {
 });
 
 describe('divide', () => {
+  test('can divide two small positive numbers', () => {
+    expected = 2;
+    actual = divide(6, 3);
+    expect(actual).toBe(expected);
+  });
 
+  test('can divide two large positive numbers', () => { 
+    expected = 100;
+    actual = divide(20000, 200);
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide two negative numbers', () => {
+    expected = 2;
+    actual = divide(-6, -3);
+    expect(actual).toBe(expected);
+  });
+
+  test('cannot divide by zero', () => {
+    expected = Infinity;
+    actual = divide(2, 0);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('modulus', () => {
+  test('can use modulus on two small positive numbers', () => {
+    expected = 0;
+    actual = modulus(6, 3);
+    expect(actual).toBe(expected);
+  });
 
+  test('can us modulus on two large positive numbers', () => { 
+    expected = 200;
+    actual = modulus(20000, 300);
+    expect(actual).toBe(expected);
+  });
+
+  test('can us modulus on two negative numbers', () => {
+    expected = -2;
+    actual = modulus(-6, -4);
+    expect(actual).toBe(expected);
+  });
+
+  test('can modulo by zero', () => {
+    expected = NaN;
+    actual = modulus(2, 0);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('even', () => {
