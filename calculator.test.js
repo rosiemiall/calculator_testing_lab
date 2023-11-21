@@ -37,11 +37,55 @@ describe('sum', () => {
 });
 
 describe('subtract', () => {
+  test('can subtract two small positive numbers', () => {
+    expected = -1;
+    actual = subtract(2, 3);
+    expect(actual).toBe(expected);
+  });
 
+  test('can subtract two large positive numbers', () => { 
+    expected = 5600;
+    actual = subtract(27800, 22200);
+    expect(actual).toBe(expected);
+  });
+
+  test('can subtract two negative numbers', () => {
+    expected = 1;
+    actual = subtract(-2, -3);
+    expect(actual).toBe(expected);
+  });
+
+  test('can subtract zero', () => {
+    expected = 2;
+    actual = subtract(2, 0);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('multiply', () => {
+  test('can multiply two small positive numbers', () => {
+    expected = 6;
+    actual = multiply(2, 3);
+    expect(actual).toBe(expected);
+  });
 
+  test('can multiply two large positive numbers', () => { 
+    expected = 4440000;
+    actual = multiply(200, 22200);
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply two negative numbers', () => {
+    expected = 6;
+    actual = multiply(-2, -3);
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply by zero', () => {
+    expected = 0;
+    actual = multiply(2, 0);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('divide', () => {
