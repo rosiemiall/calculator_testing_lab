@@ -121,13 +121,13 @@ describe('modulus', () => {
     expect(actual).toBe(expected);
   });
 
-  test('can us modulus on two large positive numbers', () => { 
+  test('can use modulus on two large positive numbers', () => { 
     expected = 200;
     actual = modulus(20000, 300);
     expect(actual).toBe(expected);
   });
 
-  test('can us modulus on two negative numbers', () => {
+  test('can use modulus on two negative numbers', () => {
     expected = -2;
     actual = modulus(-6, -4);
     expect(actual).toBe(expected);
@@ -141,9 +141,53 @@ describe('modulus', () => {
 });
 
 describe('even', () => {
+  test('can check even on small positive number', () => {
+    expected = true;
+    actual = even(6);
+    expect(actual).toBe(expected);
+  });
 
+  test('can check even on large positive number', () => { 
+    expected = false;
+    actual = even(20001);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check even on negative number', () => {
+    expected =true;
+    actual = even(-8);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check even on zero', () => {
+    expected = true;
+    actual = even(0);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('odd', () => {
+  test('can check odd on small positive number', () => {
+    expected = true;
+    actual = odd(3);
+    expect(actual).toBe(expected);
+  });
 
+  test('can check odd on large positive number', () => { 
+    expected = true;
+    actual = odd(20001);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check odd on negative number', () => {
+    expected =false;
+    actual = odd(-8);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check odd on zero', () => {
+    expected = false;
+    actual = odd(0);
+    expect(actual).toBe(expected);
+  });
 });
